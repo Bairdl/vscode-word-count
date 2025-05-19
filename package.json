@@ -1,0 +1,77 @@
+{
+  "name": "word-count",
+  "displayName": "word-count",
+  "description": "Word Count",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "commands": [
+            {
+        "command": "wordcount.update",
+        "title": "Update Word Count"
+      },
+      {
+        "command": "wordcount.folderUpdate",
+        "title": "Update Folder Word Count"
+      }
+    ],
+    "configuration": {
+      "title": "Word Count",
+      "properties": {
+        "wordcount.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable/disable word count"
+        },
+        "wordcount.showChinese": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show Chinese character count"
+        },
+        "wordcount.showEnglish": {
+          "type": "boolean",
+          "default": false,
+          "description": "Show English word count"
+        },
+        "wordcount.showTotal": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show total character count"
+        },
+        "wordcount.showFolderStats": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show folder statistics"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.100.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^8.31.1",
+    "@typescript-eslint/parser": "^8.31.1",
+    "eslint": "^9.25.1",
+    "typescript": "^5.8.3",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.5.2"
+  }
+}
