@@ -20,7 +20,7 @@ For example if there is an image subfolder under your extension project workspac
 ## Release Notes
 
 
-### 1.0.0
+### 0.0.1
 
 项目初始化，实现文件统计和文件夹统计。
 
